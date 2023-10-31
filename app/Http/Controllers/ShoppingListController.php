@@ -38,6 +38,8 @@ var_dump($sql);
     }
 public function register(Shopping_listRegisterPostRequest $request)
     {
+
+
         // validate済みのデータの取得
         $datum = $request->validated();
         //
@@ -62,6 +64,46 @@ public function register(Shopping_listRegisterPostRequest $request)
 
         //
         return redirect('/shopping_list/list');
+
     }
+
+
+ protected function getTaskModel($shopping_list_id)
+    {
+        // task_idのレコードを取得する
+        $task = Shopping_listModel::find($shopping_list_id);
+        if ($task === null) {
+            return null;
+        }
+        // 本人以外のタスクならNGとする
+        if ($task->user_id !== Auth::id()) {
+            return null;
+        }
+        //
+        return $task;
+    }
+
+     /**
+     * 削除処理
+     */
+    public function delete(Request $request, $shopping_list_id)
+    {
+        // task_idのレコードを取得する
+        $task = $this->getTaskModel($shopping_list_id);
+
+        // タスクを削除する
+        if ($task !== null) {
+            $task->delete();
+            $request->session()->flash('front.task_delete_success', true);
+        }
+
+        // 一覧に遷移する
+        return redirect('/shopping_list/list');
+    }
+
+
+
+
+
 
 }

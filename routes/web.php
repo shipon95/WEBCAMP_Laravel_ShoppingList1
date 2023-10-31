@@ -27,6 +27,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::prefix('/user')->group(function () {
     Route::get('/register', [UserController::class, 'index'])->name('front.user.register');
     Route::post('/register', [UserController::class, 'register'])->name('front.user.register.post');
+    Route::delete('/delete/{shopping_list_id}', [ShoppingListController::class, 'delete'])->whereNumber('shopping_list_id')->name('delete');
+     Route::post('/complete/{shopping_list_id}', [ShoppingListController::class, 'complete'])->whereNumber('shopping_list_id')->name('complete');
 });
 
 // 認可処理
