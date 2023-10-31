@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShoppingListController;
+use App\Http\Controllers\CompletedShoppingListController;
+
 
 
 
@@ -37,4 +39,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/list', [ShoppingListController::class, 'list'])->name('front.list');
     Route::post('/register', [ShoppingListController::class, 'register']);
     });
+       Route::get('/completed_shopping_list/list', [CompletedShoppingListController::class, 'list']);
+  Route::get('/logout', [AdminAuthController::class, 'logout']);
 });

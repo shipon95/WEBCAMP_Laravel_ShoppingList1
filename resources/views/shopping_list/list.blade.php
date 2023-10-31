@@ -34,7 +34,7 @@
 
         <h1>「買うもの」登録一覧</h1>
        >
-        <a href="/completed_tasks/list">購入済み「買うもの」一覧</a><br>
+        <a href="/completed_shopping_list/list">購入済み「買うもの」一覧</a><br>
         <table border="1" >
         <tr>
             <th>登録日
@@ -43,8 +43,8 @@
         <tr>
              <td>{{ $task->created_at }}
             <td>{{ $task->name }}
-             <td  ><form style="margin: 0" action="{{ route('complete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("このタスクを「完了」にします。よろしいですか？");' >完了</button></form>
-            <td><form style="margin: 0" action="{{ route('delete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf  @method("DELETE")　<button onclick='return confirm("このタスクを「削除」にします。よろしいですか？");' >削除</button></form>
+             <td><form style="margin: 0" action="{{ route('complete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか？");' >完了</button></form>
+            <td><form style="margin: 0" action="{{ route('delete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf  @method("DELETE")　<button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか？");' >削除</button></form>
 
 
 @endforeach
