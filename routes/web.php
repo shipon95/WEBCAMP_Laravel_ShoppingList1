@@ -1,6 +1,12 @@
 <?php
+declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ShoppingListController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// 買い物リスト
+Route::get('/', [AuthController::class, 'index'])->name('front.index');
+Route::post('/login', [AuthController::class, 'login']);
+
+// 会員登録
+Route::prefix('/user')->group(function () {
+    Route::get('/register', [UserController::class, 'index'])->name('front.user.register');
+    Route::post('/register', [UserController::class, 'register'])->name('front.user.register.post');
+});
+
+// 認可処理
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('/shopping_list')->group(function () {
+    Route::get('/list', [ShoppingListController::class, 'list'])->name('front.list');
+    Route::post('/register', [ShoppingListController::class, 'register']);
+    });
 });
