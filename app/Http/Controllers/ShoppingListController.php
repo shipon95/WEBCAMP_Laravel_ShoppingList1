@@ -63,35 +63,5 @@ public function register(Shopping_listRegisterPostRequest $request)
         //
         return redirect('/shopping_list/list');
     }
- protected function getTaskModel($task_id)
-    {
-        // task_idのレコードを取得する
-        $task = TaskModel::find($task_id);
-        if ($task === null) {
-            return null;
-        }
-        // 本人以外のタスクならNGとする
-        if ($task->user_id !== Auth::id()) {
-            return null;
-        }
-        //
-        return $task;
-    }
-    protected function singleTaskRender($task_id, $template_name)
-    {
-        // task_idのレコードを取得する
-        $task = $this->getTaskModel($task_id);
-        if ($task === null) {
-            return redirect('/task/list');
-        }
-
-        // テンプレートに「取得したレコード」の情報を渡す
-        return view($template_name, ['task' => $task]);
-    }
-
-
-
-
-
 
 }
