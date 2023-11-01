@@ -42,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/register', [ShoppingListController::class, 'register']);
     });
        Route::get('/completed_shopping_list/list', [CompletedShoppingListController::class, 'list']);
-  Route::get('/logout', [AdminAuthController::class, 'logout']);
+  Route::get('/logout', [AuthController::class, 'logout']);
 });
 
 // 管理画面

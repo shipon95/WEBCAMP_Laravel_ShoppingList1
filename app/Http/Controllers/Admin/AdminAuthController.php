@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 
 
-class AuthController extends Controller
+class AdminAuthController extends Controller
 {
     /**
      * トップページ を表示する
