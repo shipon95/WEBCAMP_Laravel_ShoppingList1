@@ -1,3 +1,5 @@
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,7 +15,7 @@ class CreateCompletedShoppingListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('completed__shopping_lists', function (Blueprint $table) {
+        Schema::create('completed_shopping_lists', function (Blueprint $table) {
               $table->unsignedInteger('id');
 
             $table->string('name', 128)->comment('買い物名');
@@ -32,6 +34,6 @@ class CreateCompletedShoppingListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('completed__shopping_lists');
+        Schema::dropIfExists('completed_shopping_lists');
     }
 }
