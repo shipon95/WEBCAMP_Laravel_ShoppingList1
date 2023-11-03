@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class AdminHomeController extends Controller
+class HomeController extends Controller
 {
     /**
      * トップページ を表示する

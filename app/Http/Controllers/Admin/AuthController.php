@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
-class AdminAuthController extends Controller
+class AuthController extends Controller
 {
     /**
      * トップページ を表示する

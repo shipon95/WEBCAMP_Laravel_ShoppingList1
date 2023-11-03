@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 
 
-class AdminUserController extends Controller
+class UserController extends Controller
 {
     /**
      * ユーザの一覧 を表示する
