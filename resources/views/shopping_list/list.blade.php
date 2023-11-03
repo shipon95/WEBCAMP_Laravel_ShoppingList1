@@ -33,7 +33,7 @@
             </form>
 
         <h1>「買うもの」登録一覧</h1>
-       >
+
         <a href="/completed_shopping_list/list">購入済み「買うもの」一覧</a><br>
         <table border="1" >
         <tr>
