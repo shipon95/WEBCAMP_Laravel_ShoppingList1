@@ -20,8 +20,8 @@ class AdminUserController extends Controller
     {
         $group_by_column = ['users.id', 'users.name'];
         $list = UserModel::select($group_by_column)
-                         ->selectRaw('count(shopping_lists.id) AS shopping_list_num')
-                         ->leftJoin('shopping_lists', 'users.id', '=', 'shopping_lists.user_id')
+                         ->selectRaw('count(completed_shopping_lists.id) AS completed_shopping_lists_num')
+                         ->leftJoin('completed_shopping_lists', 'users.id', '=', 'completed_shopping_lists.user_id')
                          ->groupBy($group_by_column)
                          ->orderBy('users.id')
                          ->get();

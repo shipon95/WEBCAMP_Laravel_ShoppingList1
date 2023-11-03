@@ -8,7 +8,7 @@ use App\Models\Shopping_list as Shopping_listModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use App\Models\Completed_Shopping_list as Completed_Shopping_listModel;
+use App\Models\CompletedShoppingList as CompletedShoppingListModel;
 
 class ShoppingListController extends Controller
 {
@@ -127,7 +127,7 @@ public function register(Shopping_listRegisterPostRequest $request)
             $dask_datum = $task->toArray();
             unset($dask_datum['created_at']);
             unset($dask_datum['updated_at']);
-            $r = Completed_Shopping_listModel::create($dask_datum);
+            $r = CompletedShoppingListModel::create($dask_datum);
             if ($r === null) {
                 // insertで失敗したのでトランザクション終了
                 throw new \Exception('');
