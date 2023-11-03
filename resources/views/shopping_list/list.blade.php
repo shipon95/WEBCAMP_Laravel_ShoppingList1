@@ -41,10 +41,11 @@
             <th>「買うもの」名
 @foreach ($list as $task)
         <tr>
-             <td>{{ $task->created_at }}
+             <td>{{ $task->created_at->format('Y/m/d') }}
             <td>{{ $task->name }}
              <td><form style="margin: 0" action="{{ route('complete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか？");' >完了</button></form>
-            <td><form style="margin: 0" style="text-align: center" action="{{ route('delete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf  @method("DELETE")　<button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか？");' >削除</button></form>
+            <td>&nbsp&nbsp&nbsp
+            <td><form style="margin: 0;  border-spacing: 0;border-collapse : collapse"　action="{{ route('delete', ['shopping_list_id' => $task->id]) }}" method="post"> @csrf  @method("DELETE")　<button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか？");' >削除</button></form>
 
 
 @endforeach

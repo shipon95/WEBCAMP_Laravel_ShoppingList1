@@ -20,9 +20,9 @@ class CreateShoppingListsTable extends Migration
             $table->unsignedBigInteger('user_id')->comment('このタスクの所有者');
             $table->foreign('user_id')->references('id')->on('users'); // 外部キー制約
             //$table->timestamps();
-            $table->date('created_at')->useCurrent();
-            $table->date('updated_at')->useCurrent()->useCurrentOnUpdate();
-        });
+            $table->dateTime('created_at',format('Y/m/d')->useCurrent();
+            $table->dateTime('updated_at',format('Y/m/d')->useCurrent()->useCurrentOnUpdate();
+y
     }
 
     /**
