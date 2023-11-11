@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShoppingListController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CompletedShoppingListController;
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
@@ -26,6 +27,9 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 // 買い物リスト
 Route::get('/', [AuthController::class, 'index'])->name('front.index');
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/chatbot', [ChatbotController::class, 'index']);
+Route::post('/chatbot', [ChatController::class, 'index']);
 
 // 会員登録
 Route::prefix('/user')->group(function () {
@@ -57,3 +61,4 @@ Route::prefix('/admin')->group(function () {
     // ログアウト
     Route::get('/logout', [AdminAuthController::class, 'logout']);
 });
+
