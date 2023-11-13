@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShoppingListController;
-use App\Http\Controllers\ChatController;
+use App\Http\Controllers\RandomController;
+use App\Http\Controllers\TopController;
+
 use App\Http\Controllers\CompletedShoppingListController;
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
@@ -42,6 +44,8 @@ Route::prefix('/user')->group(function () {
 // 認可処理
 Route::middleware(['auth'])->group(function () {
     Route::prefix('/shopping_list')->group(function () {
+     Route::get('/top', [TopController::class, 'top']);
+     Route::get('/random', [RandomController::class, 'random']);
     Route::get('/list', [ShoppingListController::class, 'list'])->name('front.list');
     Route::post('/register', [ShoppingListController::class, 'register']);
     });
