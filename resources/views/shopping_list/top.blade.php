@@ -9,7 +9,7 @@
  <form action="/shopping_list/random" method="get">
 
 
-            <button>今日食べるものは</button><br>
+            <button>一人でも今日はこれにしよ！</button><br>
 
         </form>
 
