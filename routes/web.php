@@ -13,6 +13,7 @@ use App\Http\Controllers\CompletedShoppingListController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\ProductRegisterController as AdminProductRegisterController;
 
 
 /*
@@ -25,6 +26,10 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/bootstrap', function () {
+    return view('bootstrap');
+});
 
 // 買い物リスト
 Route::get('/', [AuthController::class, 'index'])->name('front.index');
@@ -62,6 +67,8 @@ Route::prefix('/admin')->group(function () {
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('/top', [AdminHomeController::class, 'top'])->name('admin.top');
         Route::get('/user/list', [AdminUserController::class, 'list'])->name('admin.user.list');
+        Route::get('/register', [ProductRegisterController::class, 'top'])->name('admin.register');
+
     });
     // ログアウト
     Route::get('/logout', [AdminAuthController::class, 'logout']);
