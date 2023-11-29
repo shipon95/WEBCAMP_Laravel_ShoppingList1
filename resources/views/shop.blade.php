@@ -1,27 +1,10 @@
-@extends('admin.layout')
+@extends('layout')
 
+{{-- タイトル --}}
+@section('title')(詳細画面)@endsection
 {{-- メインコンテンツ --}}
 @section('contets')
-
-        <h1>商品登録ページ</h1>
-
-
-        @if ($errors->any())
-                <div>
-                @foreach ($errors->all() as $error)
-                    {{ $error }}<br>
-                @endforeach
-                </div>
-            @endif
-        <form action="/admin/productregister" method="post">
-            @csrf
-
-            商品タイトル : <input  name="product" value="{{ old('product') }}"><br>
-            商品画像 : <input type="file" name="image" accept="image/jpg,image/png"><br>
-            商品メーカー : <input  name="company" value="{{ old('company') }}"  ><br>
-            値段 : <input  name="cost" value="{{ old('cost') }}" ><br>
-              <button>商品を登録する</button>
-        </form>
+ <a href="/shopping_list/top">TOP</a><br>
  <h1>商品登録一覧</h1>
 
 
@@ -39,13 +22,16 @@
              <td>{{ $products->company }}
 
                <td>{{ $products->cost }}
+               <td><form style="margin: 0"action="{{ route('complete1', ['product_id' => $products->id]) }}" method="post">
+             @csrf <button onclick='return confirm("この商品を「リスト」に入れます。よろしいですか？");' >リスト</button>
+             </form>
 
 @endforeach
 </table>
 
 現在 {{ $list->currentPage() }} ページ目<br>
         @if ($list->onFirstPage() === false)
-            <a href="/admin/register">最初のページ</a>
+            <a href="/shop">最初のページ</a>
         @else
             最初のページ
         @endif
@@ -63,7 +49,9 @@
         @endif
         <br>
         <hr>
-
+ <menu label="リンク">
+        <a href="/logout">ログアウト</a><br>
+        </menu>
 
 
 

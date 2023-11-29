@@ -17,9 +17,10 @@ class ShoppingRequest extends FormRequest
     {
         return [
             'product' => ['required', 'max:255'],
+            'image' => ['required'],
             'company' => ['required', 'max:255'],
             'cost' => ['required'],
-            'image' => ['nullable|image|max:2048'],
+
 
         ];
     }

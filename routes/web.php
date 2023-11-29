@@ -15,7 +15,6 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\ProductRegisterController as AdminProductRegisterController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,8 +41,7 @@ Route::post('/chatbot', [ChatController::class, 'index']);
 Route::prefix('/user')->group(function () {
     Route::get('/register', [UserController::class, 'index'])->name('front.user.register');
     Route::post('/register', [UserController::class, 'register'])->name('front.user.register.post');
-    Route::delete('/delete/{shopping_list_id}', [ShoppingListController::class, 'delete'])->whereNumber('shopping_list_id')->name('delete');
-     Route::post('/complete/{shopping_list_id}', [ShoppingListController::class, 'complete'])->whereNumber('shopping_list_id')->name('complete');
+
 });
 
 // 認可処理
@@ -54,7 +52,10 @@ Route::middleware(['auth'])->group(function () {
      Route::get('/list', [ShoppingListController::class, 'list'])->name('front.list');
      Route::post('/register', [ShoppingListController::class, 'register']);
     });
-  Route::get('/shopping', [ShoppingController::class, 'shop']);
+    Route::delete('/delete/{shopping_list_id}', [ShoppingListController::class, 'delete'])->whereNumber('shopping_list_id')->name('delete');
+    Route::post('/complete/{shopping_list_id}', [ShoppingListController::class, 'complete'])->whereNumber('shopping_list_id')->name('complete');
+    Route::post('/complete1/{product_id}', [ShoppingController::class, 'complete'])->whereNumber('product_id')->name('complete1');
+  Route::get('/shop', [ShoppingController::class, 'shop']);
   Route::get('/completed_shopping_list/list', [CompletedShoppingListController::class, 'list']);
   Route::get('/logout', [AuthController::class, 'logout']);
 });
@@ -67,7 +68,8 @@ Route::prefix('/admin')->group(function () {
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('/top', [AdminHomeController::class, 'top'])->name('admin.top');
         Route::get('/user/list', [AdminUserController::class, 'list'])->name('admin.user.list');
-        Route::get('/register', [ProductRegisterController::class, 'top'])->name('admin.register');
+        Route::get('/register', [AdminProductRegisterController::class, 'top'])->name('admin.register');
+         Route::post('/productregister', [AdminProductRegisterController::class, 'register'])->name('admin.productregister');
 
     });
     // ログアウト

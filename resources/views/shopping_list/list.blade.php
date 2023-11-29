@@ -76,6 +76,7 @@
         @endif
         <br>
         <hr>
+        <a href="/shopping_list/top">TOP</a><br>
         <menu label="リンク">
         <a href="/logout">ログアウト</a><br>
         </menu>
