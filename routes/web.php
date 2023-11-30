@@ -54,7 +54,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::delete('/delete/{shopping_list_id}', [ShoppingListController::class, 'delete'])->whereNumber('shopping_list_id')->name('delete');
     Route::post('/complete/{shopping_list_id}', [ShoppingListController::class, 'complete'])->whereNumber('shopping_list_id')->name('complete');
-    Route::post('/complete1/{product_id}', [ShoppingController::class, 'complete'])->whereNumber('product_id')->name('complete1');
+   Route::get('/cart', [ShoppingController::class, 'cart']);
   Route::get('/shop', [ShoppingController::class, 'shop']);
   Route::get('/completed_shopping_list/list', [CompletedShoppingListController::class, 'list']);
   Route::get('/logout', [AuthController::class, 'logout']);

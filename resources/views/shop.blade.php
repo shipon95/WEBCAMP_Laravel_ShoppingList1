@@ -22,8 +22,10 @@
              <td>{{ $products->company }}
 
                <td>{{ $products->cost }}
-               <td><form style="margin: 0"action="{{ route('complete1', ['product_id' => $products->id]) }}" method="post">
-             @csrf <button onclick='return confirm("この商品を「リスト」に入れます。よろしいですか？");' >リスト</button>
+               <td><form style="margin: 0"action="/cart" method="post">
+             @csrf
+              <input type="hidden" name="product_id" value="{{$products->id}}">
+               <input type="submit" value="カートに入れる" >
              </form>
 
 @endforeach
