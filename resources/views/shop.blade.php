@@ -22,10 +22,9 @@
              <td>{{ $products->company }}
 
                <td>{{ $products->cost }}
-               <td><form style="margin: 0"action="/cart" method="post">
+               <td><form style="margin: 0" action="{{route('addcart', ['product_id' => $products->id])}}" method="post">
              @csrf
-              <input type="hidden" name="product_id" value="{{$products->id}}">
-               <input type="submit" value="カートに入れる" >
+               <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか？");' >cart</button>
              </form>
 
 @endforeach
@@ -50,6 +49,7 @@
             次に進む
         @endif
         <br>
+         <a href="/cart">cart</a><br>
         <hr>
  <menu label="リンク">
         <a href="/logout">ログアウト</a><br>

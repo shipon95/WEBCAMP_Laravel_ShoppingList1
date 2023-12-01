@@ -9,6 +9,7 @@ use App\Http\Controllers\RandomController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\CompletedShoppingListController;
+use App\Http\Controllers\CartController;
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
@@ -54,7 +55,8 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::delete('/delete/{shopping_list_id}', [ShoppingListController::class, 'delete'])->whereNumber('shopping_list_id')->name('delete');
     Route::post('/complete/{shopping_list_id}', [ShoppingListController::class, 'complete'])->whereNumber('shopping_list_id')->name('complete');
-   Route::get('/cart', [ShoppingController::class, 'cart']);
+   Route::get('/cart', [CartController::class, 'cart']);
+    Route::post('/addcart/{product_id}', [ShoppingController::class, 'addcart'])->whereNumber('product_id')->name('addcart');
   Route::get('/shop', [ShoppingController::class, 'shop']);
   Route::get('/completed_shopping_list/list', [CompletedShoppingListController::class, 'list']);
   Route::get('/logout', [AuthController::class, 'logout']);

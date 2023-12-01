@@ -68,37 +68,6 @@ public function register(Shopping_listRegisterPostRequest $request)
 
     }
 
-    public function register1(Shopping_listRegisterPostRequest $request)
-    {
-
-
-        // validate済みのデータの取得
-        $datum = $request->validated();
-        //
-        //$user = Auth::user();
-        //$id = Auth::id();
-        //var_dump($datum, $user, $id); exit;
-
-        // user_id の追加
-        $datum['user_id'] = Auth::id();
-
-        // テーブルへのINSERT
-        try {
-            $r = Shopping_listModel::create($datum);
-        } catch(\Throwable $e) {
-            // XXX 本当はログに書く等の処理をする。今回は一端「出力する」だけ
-            echo $e->getMessage();
-            exit;
-        }
-
-        // タスク登録成功
-        $request->session()->flash('front.task_register_success', true);
-
-        //
-        return redirect('/shopping_list/list');
-
-    }
-
 
  protected function getTaskModel($shopping_list_id)
     {
