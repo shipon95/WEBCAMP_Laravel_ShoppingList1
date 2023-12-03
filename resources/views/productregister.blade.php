@@ -13,7 +13,7 @@
                 @endforeach
                 </div>
             @endif
-        <form action="/admin/productregister" method="post">
+        <form action="/productregister" method="post">
             @csrf
 
             商品タイトル : <input  name="product" value="{{ old('product') }}"><br>
@@ -37,15 +37,15 @@
             <td>{{ $products->product }}
              <td><img src="{{asset('storage/images/'.$products->image)}}" alt="">
              <td>{{ $products->company }}
-
                <td>{{ $products->cost }}
 
-@endforeach
-</table>
+
+ @endforeach
+ </table>
 
 現在 {{ $list->currentPage() }} ページ目<br>
         @if ($list->onFirstPage() === false)
-            <a href="/admin/register">最初のページ</a>
+            <a href="/register1">最初のページ</a>
         @else
             最初のページ
         @endif
@@ -63,6 +63,7 @@
         @endif
         <br>
         <hr>
+         <a href="/shopping_list/top">TOP</a><br>
 
 
 

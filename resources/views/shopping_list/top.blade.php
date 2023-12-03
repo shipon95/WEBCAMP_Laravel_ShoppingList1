@@ -13,5 +13,5 @@
 
         </form>
 
-
+<a href="/register1">商品登録</a><br>
 @endsection

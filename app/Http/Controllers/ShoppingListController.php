@@ -45,8 +45,8 @@ public function register(Shopping_listRegisterPostRequest $request)
         $datum = $request->validated();
         //
         //$user = Auth::user();
-        //$id = Auth::id();
-        //var_dump($datum, $user, $id); exit;
+      //  $id = Auth::id();
+       // var_dump($datum, $user, $id); exit;
 
         // user_id の追加
         $datum['user_id'] = Auth::id();

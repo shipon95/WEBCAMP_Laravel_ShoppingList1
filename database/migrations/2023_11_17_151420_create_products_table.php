@@ -19,6 +19,9 @@ class CreateProductsTable extends Migration
             $table->string('image')->comment('image');
              $table->string('company')->comment('商品名');
             $table->unsignedBigInteger('cost')->comment('価格');
+$table->unsignedBigInteger('user_id')->comment('このタスクの所有者');
+            $table->foreign('user_id')->references('id')->on('users'); // 外部キー制約
+
 
             //$table->timestamps();
             $table->dateTime('created_at')->useCurrent();

@@ -18,6 +18,7 @@ class CreateindexTastsUserId extends Migration
             $table->index('user_id');
         });
     }
+
     /**
      * Reverse the migrations.
      *

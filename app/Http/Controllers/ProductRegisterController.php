@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\ShoppingRequest;
@@ -28,15 +28,16 @@ class ProductRegisterController extends Controller
         $list = $this->getListBuilder()
                      ->paginate($per_page);
 
-        return view('admin.productregister',['list' => $list]);
+        return view('productregister',['list' => $list]);
     }
 
     public function register(ShoppingRequest $request)
     {
- $datum = $request->validated();
-   $datum['user_id'] = Auth::id();
+   $datum1 = $request->validated();
+ $datum1['user_id'] = Auth::id();
+
 try {
-            $r = ProductModel::create($datum);
+            $r = ProductModel::create($datum1);
         } catch(\Throwable $e) {
             // XXX 本当はログに書く等の処理をする。今回は一端「出力する」だけ
             echo $e->getMessage();
@@ -44,14 +45,8 @@ try {
         }
 
 
-
-          return redirect('/admin/register');
+          return redirect('/register1');
     }
-
-
-
-        //
-
 
 
 
