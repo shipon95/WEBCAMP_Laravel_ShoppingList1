@@ -4,13 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateindexTastsUserId extends Migration
+class CreateindexProductsUserId extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
+
     public function up()
     {
         //
@@ -28,7 +25,8 @@ class CreateindexTastsUserId extends Migration
     {
         //
         Schema::table('shopping_lists', function (Blueprint $table) {
-            $table->dropIndex('user_id');
+            $table->dropIndex(['user_id']);
         });
     }
+
 }

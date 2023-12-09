@@ -20,8 +20,10 @@
             <td>{{ $products->product }}
              <td><img src="{{asset('storage/images/'.$products->image)}}" alt="">
              <td>{{ $products->company }}
-
                <td>{{ $products->cost }}
+               <td><form style="margin: 0"action="{{ route('addcart', ['product_id' => $products->id]) }}" method="post">
+             @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか？");' >cart</button>
+             </form>
 
 
 @endforeach

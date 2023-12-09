@@ -34,7 +34,7 @@ class ProductRegisterController extends Controller
     public function register(ShoppingRequest $request)
     {
    $datum1 = $request->validated();
- $datum1['user_id'] = Auth::id();
+ $datum1['user1_id'] = Auth::id();
 
 try {
             $r = ProductModel::create($datum1);

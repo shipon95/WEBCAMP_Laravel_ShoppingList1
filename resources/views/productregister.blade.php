@@ -40,6 +40,7 @@
                <td>{{ $products->cost }}
 
 
+
  @endforeach
  </table>
 
