@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+
+
+
+
+a:after, a:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:hover, a:focus {
+  outline: none;
+}
+.back {
+  padding: 50px 0 150px 0;
+}
+.menu li{
+ padding-bottom: 40px;
+
+}
+
+.menu a {
+color: black;
+  font-family: Lato;
+  font-size: 17pt;
+  font-weight: 400;
+  padding: 15px 25px;
+  /**/
+  position: relative;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.SMN_effect-1 a:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 2px;
+  background: black;
+  content: '';
+  -webkit-transition: top 0.3s;
+  -moz-transition: top 0.3s;
+  transition: top 0.3s;
+}
+
+.SMN_effect-1 a:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: white;
+  content: '';
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+}
+
+.SMN_effect-1 a:hover:before {
+  top: 100%;
+  opacity: 1;
+}
+
+.SMN_effect-1 a:hover:after {
+  height: 100%;
+}

@@ -1,8 +1,16 @@
 ul,ol{list-style:none}
 a{text-decoration:none;color:#fff;font-size:15px}
-nav{width:100%;overflow:hidden;height:80px;background-color:#1b2035;margin:50px auto}
+nav{
+  width:100%;
+  overflow:hidden;
+  height:80px;
+  background-color:#353535;
+  margin-bottom: 50px }
+
 #nav2>a {
+
   display: block;
+
   float: left;
   font-size: 30px;
   font-weight: 900;
@@ -16,4 +24,10 @@ nav{width:100%;overflow:hidden;height:80px;background-color:#1b2035;margin:50px 
   float: left;
   padding: 0 30px;
   line-height: 80px;
+}
+
+.complete{
+color: black;
+text-decoration:underline;
+text-decoration-color: black;
 }

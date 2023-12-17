@@ -1,12 +1,27 @@
+
 @extends('layout')
 
 {{-- メインコンテンツ --}}
 @section('contets')
-            <h1> 豚肉コチュジャン炒め(제육볶음)</h1>
+ <main>
+       <div class="container flex flex-center">
+  <div class="logo center mx-auto relative">
+    <div class="mark"></div>
+    <span class="p">豚肉</span><!--
+ --><span class="r">コチュ</span><!--
+ --><span class="e1">ジ</span><!--
+ --><span class="e2">ャン</span><!--
+ --><span class="d">炒め</span>
 
+  </div>
+
+</div>
+
+<div class="content">
+<div class="list">
 <li>材料準備
-       <ol>
-           <li>豚バラ　500g</li>
+       <ul class="imagelist">
+          <li>豚バラ　500g</li>
            <li>玉ねぎ　一個</li>
            <li>キャベツ　半個</li>
            <li>パプリカ　2個</li>
@@ -15,7 +30,7 @@
            <li>砂糖　1スープん</li>
            <li>唐辛子　3スープん</li>
            <li>にんにく　1スープん</li>
-       </ol>
+       </ul>
        </li>
 
         <h2>「足りない材料」登録</h2>
@@ -30,8 +45,13 @@
 
          <button>「足りない材料」を登録する</button>
         </form>
+</div>
 
-     <a href="/shopping_list/list">買い物リスト</a><br>
-     <a href="/shopping_list/top">TOP</a><br>
+     <div class="image">
+         <img src="{{ asset('/image/OIP.jpg') }}" alt="">
+     </div>
+     </div>
+
+</main>
 
 @endsection

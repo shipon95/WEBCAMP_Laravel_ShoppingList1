@@ -5,6 +5,7 @@
 
 {{-- メインコンテンツ --}}
 @section('contets')
+<main>
         <h1>「買うもの」登録</h1>
             @if (session('front.task_register_success') == true)
                 タスクを登録しました！！<br>
@@ -33,8 +34,8 @@
             </form>
 
         <h1>「買うもの」登録一覧</h1>
+        <a href="/completed_shopping_list/list" class="complete">購入済み「買うもの」一覧に移動</a>
 
-        <a href="/completed_shopping_list/list">購入済み「買うもの」一覧</a><br>
         <table border="1" >
         <tr>
             <th>登録日
@@ -43,11 +44,11 @@
         <tr>
              <td>{{ $task->created_at->format('Y/m/d') }}
             <td>{{ $task->name }}
-             <td><form style="margin: 0"action="{{ route('complete', ['shopping_list_id' => $task->id]) }}" method="post">
+             <td><form action="{{ route('complete', ['shopping_list_id' => $task->id]) }}" method="post">
              @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか？");' >完了</button>
              </form>
             <td>&nbsp&nbsp&nbsp
-            <td><form style="margin: 0"action="{{ route('delete', ['shopping_list_id' => $task->id]) }}" method="post">
+            <td><form action="{{ route('delete', ['shopping_list_id' => $task->id]) }}" method="post">
             @csrf @method("DELETE") <button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか？");'>削除</button>
             </form>
 
@@ -75,9 +76,5 @@
             次に進む
         @endif
         <br>
-        <hr>
-        <a href="/shopping_list/top">TOP</a><br>
-        <menu label="リンク">
-        <a href="/logout">ログアウト</a><br>
-        </menu>
+        </main>
 @endsection

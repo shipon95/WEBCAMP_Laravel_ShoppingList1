@@ -1,12 +1,28 @@
+
+
 @extends('layout')
 
 {{-- メインコンテンツ --}}
 @section('contets')
-           <h1>キムチチャーハン(김치볶음밥)</h1>
+ <main>
+       <div class="container flex flex-center">
+  <div class="logo center mx-auto relative">
+    <div class="mark"></div>
+    <span class="p">キムチ</span><!--
+ --><span class="r">チャ</span><!--
+ --><span class="e1">ー</span><!--
+ --><span class="e2">ハ</span><!--
+ --><span class="d">ン</span>
 
- <li>材料準備
-       <ol>
-           <li>お米　300g</li>
+  </div>
+
+</div>
+
+<div class="content">
+<div class="list">
+<li>材料準備
+        <ul class="imagelist">
+         <li>お米　300g</li>
            <li>キムチ　3スープん</li>
            <li>砂糖　1スープん</li>
            <li>醤油　1スープん</li>
@@ -15,7 +31,7 @@
            <li>唐辛子　1スープん</li>
        　   <li>マユネーズ　1スープん</li>
        　   <li>モッツァレラ</li>
-       </ol>
+       </ul>
        </li>
 
         <h2>「足りない材料」登録</h2>
@@ -30,8 +46,13 @@
 
          <button>「足りない材料」を登録する</button>
         </form>
+</div>
 
-     <a href="/shopping_list/list">買い物リスト</a><br>
-     <a href="/shopping_list/top">TOP</a><br>
+     <div class="image">
+         <img src="{{ asset('/image/OIP.jpg') }}" alt="">
+     </div>
+     </div>
+
+</main>
 
 @endsection

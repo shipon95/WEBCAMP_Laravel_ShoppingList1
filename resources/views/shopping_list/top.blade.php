@@ -6,19 +6,22 @@
     </head>
   <body>
 
-<div class="container flex flex-center">
-    <div class="text">今日なにを食べるか迷っているあなた </div>
-  <div class="logo center mx-auto relative">
-    <div class="mark"></div>
-    <span class="p">下</span><!--
- --><span class="r">を</span><!--
- --><span class="e1">C</span><!--
- --><span class="s1">L</span><!--
- --><span class="s2">I</span><!--
- --><span class="e2">C</span><!--
- --><span class="d">K</span>
-  </div>
-</div>
+<h1>
+  <span>何</span>
+  <span>を</span>
+  <span>食</span>
+  <span>べ</span>
+  <span>る</span>
+  <span>か</span>
+  <span>下</span>
+  <span>を</span>
+  <span>ク</span>
+  <span>リッ</span>
+  <span>ク</span>
+</h1>
+
+
+
 
    <a href="/shopping_list/random" data-text="button">Button</a>
   <body>
