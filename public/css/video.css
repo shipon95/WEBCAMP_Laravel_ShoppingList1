@@ -1,0 +1,16 @@
+.video-container {
+  position:relative;
+  height:0;
+  padding-bottom:56.25%;
+ margin-left: 150px;
+}
+
+.video-container iframe {
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:80%;
+  height:80%;
+}
+

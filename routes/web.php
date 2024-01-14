@@ -69,12 +69,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/random6', [ViewController::class, 'random6']);
     Route::get('/recipe', [RecipeController::class, 'index']);
     Route::get('/recipevideo', [RecipevideoController::class, 'recipevideo']);
-    Route::get('/recipevideo1', [RecipevideoController::class, 'recipevideo2']);
-    Route::get('/recipevideo2', [RecipevideoController::class, 'recipevideo3']);
-    Route::get('/recipevideo3', [RecipevideoController::class, 'recipevideo4']);
-    Route::get('/recipevideo4', [RecipevideoController::class, 'recipevideo5']);
-    Route::get('/recipevideo5', [RecipevideoController::class, 'recipevideo6']);
-    Route::get('/recipevideo6', [RecipevideoController::class, 'recipevideo7']);
+    Route::get('/recipevideo1', [RecipevideoController::class, 'recipevideo1']);
+    Route::get('/recipevideo2', [RecipevideoController::class, 'recipevideo2']);
+    Route::get('/recipevideo3', [RecipevideoController::class, 'recipevideo3']);
+    Route::get('/recipevideo4', [RecipevideoController::class, 'recipevideo4']);
+    Route::get('/recipevideo5', [RecipevideoController::class, 'recipevideo5']);
+ Route::get('/recipevideo6', [RecipevideoController::class, 'recipevideo6']);
   Route::get('/logout', [AuthController::class, 'logout']);
 });
 

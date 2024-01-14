@@ -7,6 +7,7 @@
         <title>買い物リスト管理・韓国料理 @yield('title')</title>
   <link rel="stylesheet" href="{{ asset('/css/nav.css') }}">
  <link rel="stylesheet" href="{{ asset('/css/a_link.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/video.css') }}">
     </head>
 
     <body>
