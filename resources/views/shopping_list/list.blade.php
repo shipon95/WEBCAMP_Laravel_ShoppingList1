@@ -6,6 +6,7 @@
 {{-- メインコンテンツ --}}
 @section('contets')
 <main>
+    <div class="buy">
         <h1>「買うもの」登録</h1>
             @if (session('front.task_register_success') == true)
                 タスクを登録しました！！<br>
@@ -76,5 +77,6 @@
             次に進む
         @endif
         <br>
+        </div>
         </main>
 @endsection

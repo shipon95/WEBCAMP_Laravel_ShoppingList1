@@ -1,5 +1,6 @@
 body {
   width: 100%;
+  margin-top: 50px;
   height:100vh;
   background-image: url(../image/);
   background-position: center center;

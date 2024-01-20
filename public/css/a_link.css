@@ -1,6 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
 
-
+.row.columns{
+  margin-left:50px;
+  color: #333333;
+  font-size: large;
+  font-family: Gerogia, Serif;
+}
 
 
 a:after, a:before {

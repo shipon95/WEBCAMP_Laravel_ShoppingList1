@@ -85,7 +85,7 @@ Route::prefix('/admin')->group(function () {
     // 認可処理
     Route::middleware(['auth:admin'])->group(function () {
     Route::get('/user/list', [AdminUserController::class, 'list'])->name('admin.user.list');
-
+     Route::get('/top', [AdminHomeController::class, 'top'])->name('admin.top');
     });
     // ログアウト
     Route::get('/logout', [AdminAuthController::class, 'logout']);

@@ -2,14 +2,10 @@
 
 {{-- メインコンテンツ --}}
 @section('contets')
-<menu label="リンク">
-        <a href="/admin/top">管理画面Top</a><br>
-        <a href="/admin/user/list">ユーザ一覧</a><br>
-        <a href="/admin/logout">ログアウト</a><br>
-        </menu>
 
 
-        <h1>ユーザ一覧</h1>
+        <h1 style="font-family: Gerogia, Serif; color: #333333; ">ユーザ一覧</h1>
+
          <table border="1">
         <tr>
             <th>ユーザID
@@ -23,3 +19,9 @@
 @endforeach
         </table>
 @endsection
+
+<menu label="リンク">
+        <a href="/admin/top">管理画面Top</a><br>
+
+        <a href="/admin/logout">ログアウト</a><br>
+        </menu>

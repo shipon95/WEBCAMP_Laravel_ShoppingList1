@@ -6,7 +6,7 @@
 @section('contets')
 <main>
 
-    <div class="row columns"><h1>recipe </h1>
+    <div class="row columns"><h1>レシピ </h1>
       <ul class="menu align-center expanded text-center SMN_effect-1">
         <li><a href="/recipevideo">キムチチゲ</a></li>
         <li><a href="/recipevideo1">トッポッキ</a></li>
