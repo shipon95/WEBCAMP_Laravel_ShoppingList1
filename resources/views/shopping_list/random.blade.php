@@ -48,7 +48,7 @@
 </div>
 
      <div class="image">
-         <img src="{{ asset('/image/OIP.jpg') }}" alt="">
+         <img src="{{ asset('/image/kim.jpg') }}" alt="">
      </div>
      </div>
 

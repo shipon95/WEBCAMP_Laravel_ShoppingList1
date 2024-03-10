@@ -21,15 +21,16 @@
 <div class="list">
 <li>材料準備
        <ul class="imagelist">
-          <li>豚バラ　500g</li>
-           <li>玉ねぎ　一個</li>
-           <li>キャベツ　半個</li>
-           <li>パプリカ　2個</li>
-           <li>コチュジャン　1スープん</li>
-           <li>醤油　4スープん</li>
-           <li>砂糖　1スープん</li>
-           <li>唐辛子　3スープん</li>
-           <li>にんにく　1スープん</li>
+          <li>リンゴ　1/2個</li>
+           <li>玉ねぎ　1/4個</li>
+           <li>スプライト 180ml</li>
+           <li>唐辛子　2スープん</li>
+           <li>コチュジャン　2スープん</li>
+           <li>醤油　2スープん</li>
+           <li>砂糖　2スープん</li>
+           <li>水飴　2スープん</li>
+           <li>酢　2スープん</li>
+           <li>素麺　200g</li>
        </ul>
        </li>
 
@@ -48,7 +49,7 @@
 </div>
 
      <div class="image">
-         <img src="{{ asset('/image/OIP.jpg') }}" alt="">
+         <img src="{{ asset('/image/bi.jpg') }}" alt="">
      </div>
      </div>
 
